@@ -1,0 +1,6 @@
+[submodule "phantom/libraries"]
+	path = phantom/libraries
+	url = https://github.com/gilmarxd/glfw.git
+[submodule "phantom/libraries/glfw"]
+	path = phantom/libraries/glfw
+	url = https://github.com/gilmarxd/glfw.git
