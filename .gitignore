@@ -1,1 +1,4 @@
 phantom/libraries/glfw/*
+Makefile
+phantom.make
+bin/*
