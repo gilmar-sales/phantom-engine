@@ -13,10 +13,12 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["glfw"] = "phantom/libraries/glfw/include"
 IncludeDir["glad"] = "phantom/libraries/glad/include"
+IncludeDir["spdlog"] = "phantom/libraries/spdlog/include"
 
 group "Dependencies"
     include "phantom/libraries/glfw"
     include "phantom/libraries/glad"
+    include "phantom/libraries/spdlog"
 
 group ""
 
@@ -36,12 +38,14 @@ project "phantom"
     includedirs {
 		"%{prj.name}/src",
 		"%{IncludeDir.glfw}",
-		"%{IncludeDir.glad}"
+		"%{IncludeDir.glad}",
+		"%{IncludeDir.spdlog}"
     }
     
     links { 
 		"glfw",
-		"glad"
+		"glad",
+		"spdlog"
     }
     
     filter "toolset:msvc"
