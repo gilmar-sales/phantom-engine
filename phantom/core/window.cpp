@@ -10,7 +10,7 @@ namespace ph {
             std::cout << "Couldn't initialize GLFW!" << std::endl;
         }
 
-        m_window = glfwCreateWindow(data.width, data.height, data.title.c_str());
+        m_window = glfwCreateWindow(data.width, data.height, data.title.c_str(), nullptr, nullptr);
 
         glfwMakeContextCurrent(m_window);
         
