@@ -7,3 +7,6 @@
 [submodule "phantom/libraries/glad"]
 	path = phantom/libraries/glad
 	url = https://github.com/gilmarxd/glad.git
+[submodule "phantom/libraries/spdlog"]
+	path = phantom/libraries/spdlog
+	url = https://github.com/gilmarxd/spdlog.git
