@@ -4,3 +4,6 @@
 [submodule "phantom/libraries/glfw"]
 	path = phantom/libraries/glfw
 	url = https://github.com/gilmarxd/glfw.git
+[submodule "phantom/libraries/glad"]
+	path = phantom/libraries/glad
+	url = https://github.com/gilmarxd/glad.git
