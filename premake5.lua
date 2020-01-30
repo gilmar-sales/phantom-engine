@@ -30,6 +30,9 @@ project "phantom"
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "phantom/hzpch.h"
+    pchsource "phantom/hzpch.cpp"
+    
     files {
         "%{prj.name}/src/**.h",
         "%{prj.name}/src/**.cpp",
