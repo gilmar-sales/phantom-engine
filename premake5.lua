@@ -1,12 +1,70 @@
 workspace "phantom-engine"
-    project "phantom"
-        kind "StaticLib"
-        language "C++"
-        staticruntime "on"
+    architecture "x86_64"
     
-        targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-        objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+    configurations {
+		"Debug",
+		"Release",
+		"Dist"
+    }
+    
+outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
-        file {
-            
+-- Include directories relative to root folder (solution directory)
+IncludeDir = {}
+IncludeDir["glfw"] = "phantom/libraries/glfw/include"
+IncludeDir["glad"] = "phantom/libraries/glad/include"
+
+group "Dependencies"
+    include "phantom/libraries/glfw"
+    include "phantom/libraries/glad"
+
+group ""
+
+project "phantom"
+    kind "StaticLib"
+    language "C++"
+    staticruntime "on"
+
+    targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+    objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+    files {
+        "%{prj.name}/src/**.h",
+        "%{prj.name}/src/**.cpp",
+    }
+
+    includedirs {
+		"%{prj.name}/src",
+		"%{IncludeDir.glfw}",
+		"%{IncludeDir.glad}"
+    }
+    
+    links { 
+		"glfw",
+		"glad"
+    }
+    
+    filter "toolset:msvc"
+        links {
+            "opengl32.lib"
         }
+
+    filter "toolset:gcc"
+        links {
+            "GL"
+        }
+
+    filter "configurations:Debug"
+		defines "PH_DEBUG"
+		runtime "Debug"
+		symbols "on"
+
+	filter "configurations:Release"
+		defines "PH_RELEASE"
+		runtime "Release"
+		optimize "on"
+
+	filter "configurations:Dist"
+		defines "PHs_DIST"
+		runtime "Release"
+		optimize "on"
