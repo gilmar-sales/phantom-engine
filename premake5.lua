@@ -74,4 +74,40 @@ project "phantom"
 	filter "configurations:Dist"
 		defines "PHs_DIST"
 		runtime "Release"
+        optimize "on"
+
+project "sandbox"
+    kind "ConsoleApp"
+    language "C++"
+    staticruntime "on"
+
+    targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+    objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+    files {
+        "%{prj.name}/src/**.h",
+        "%{prj.name}/src/**.cpp",
+    }
+
+    includedirs {
+		"phantom"
+    }
+
+    links {
+        "phantom"
+    }
+
+    filter "configurations:Debug"
+		defines "PH_DEBUG"
+		runtime "Debug"
+		symbols "on"
+
+	filter "configurations:Release"
+		defines "PH_RELEASE"
+		runtime "Release"
 		optimize "on"
+
+	filter "configurations:Dist"
+		defines "PHs_DIST"
+		runtime "Release"
+        optimize "on"
