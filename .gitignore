@@ -1,4 +1,6 @@
-phantom/libraries/glfw/*
+phantom/libraries/*
+.vscode
+
 Makefile
-phantom.make
 bin/*
+*.make
