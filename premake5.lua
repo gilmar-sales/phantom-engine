@@ -1,5 +1,7 @@
 workspace "phantom-engine"
     architecture "x86_64"
+	startproject "sandbox"
+
     
     configurations {
 		"Debug",
@@ -10,28 +12,30 @@ workspace "phantom-engine"
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 -- Include directories relative to root folder (solution directory)
-IncludeDir = {}
-IncludeDir["glfw"] = "phantom/libraries/glfw/include"
-IncludeDir["glad"] = "phantom/libraries/glad/include"
-IncludeDir["spdlog"] = "phantom/libraries/spdlog/include"
+IncludeDir = {
+    ["glfw"] = "phantom/libraries/glfw/include",
+    ["glad"] = "phantom/libraries/glad/include"
+
+}
+--IncludeDir["spdlog"] = "phantom/libraries/spdlog/include"
 
 group "Dependencies"
     include "phantom/libraries/glfw"
     include "phantom/libraries/glad"
-    include "phantom/libraries/spdlog"
 
 group ""
 
 project "phantom"
     kind "StaticLib"
     language "C++"
+    cppdialect "C++17"
     staticruntime "on"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
-	pchheader "phantom/phpch.h"
-    pchsource "phantom/phpch.cpp"
+	pchheader "%{prj.name}/src/phpch.h"
+    pchsource "%{prj.name}/src/phpch.cpp"
     
     files {
         "%{prj.name}/src/**.h",
@@ -43,13 +47,12 @@ project "phantom"
 		"%{prj.name}/src",
 		"%{IncludeDir.glfw}",
 		"%{IncludeDir.glad}",
-		"%{IncludeDir.spdlog}"
+		"phantom/libraries/spdlog/include"
     }
     
     links { 
 		"glfw",
-		"glad",
-		"spdlog"
+		"glad"
     }
     
     filter "toolset:msvc"
@@ -78,8 +81,10 @@ project "phantom"
         optimize "on"
 
 project "sandbox"
+    location "sandbox"
     kind "ConsoleApp"
     language "C++"
+    cppdialect "C++17"
     staticruntime "on"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
@@ -95,18 +100,22 @@ project "sandbox"
 		"phantom/src",
 		"%{IncludeDir.glfw}",
 		"%{IncludeDir.glad}",
-		"%{IncludeDir.spdlog}"
+		"phantom/libraries/spdlog/include"
     }
 
     links {
         "phantom",
 		"glfw",
         "glad",
-        "GL",
-        "dl",
-        "X11",
-        "pthread"
+        "GL"
     }
+
+    filter "system:linux" 
+        links {
+            "dl",
+            "X11",
+            "pthread"
+        }
 
     filter "configurations:Debug"
 		defines "PH_DEBUG"
@@ -119,6 +128,6 @@ project "sandbox"
 		optimize "on"
 
 	filter "configurations:Dist"
-		defines "PHs_DIST"
+		defines "PH_DIST"
 		runtime "Release"
         optimize "on"
