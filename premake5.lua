@@ -39,6 +39,7 @@ project "phantom"
     }
 
     includedirs {
+		"%{prj.name}",
 		"%{prj.name}/src",
 		"%{IncludeDir.glfw}",
 		"%{IncludeDir.glad}",
@@ -72,7 +73,7 @@ project "phantom"
 		optimize "on"
 
 	filter "configurations:Dist"
-		defines "PHs_DIST"
+		defines "PH_DIST"
 		runtime "Release"
         optimize "on"
 
@@ -90,11 +91,21 @@ project "sandbox"
     }
 
     includedirs {
-		"phantom"
+		"phantom",
+		"phantom/src",
+		"%{IncludeDir.glfw}",
+		"%{IncludeDir.glad}",
+		"%{IncludeDir.spdlog}"
     }
 
     links {
-        "phantom"
+        "phantom",
+		"glfw",
+        "glad",
+        "GL",
+        "dl",
+        "X11",
+        "pthread"
     }
 
     filter "configurations:Debug"

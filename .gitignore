@@ -3,4 +3,5 @@ phantom/libraries/*
 
 Makefile
 bin/*
+bin-int/*
 *.make

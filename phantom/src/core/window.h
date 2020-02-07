@@ -1,7 +1,7 @@
 #pragma once
 
-#include <GLFW/glfw3.h>
 #include <glad/glad.h>
+#include <GLFW/glfw3.h>
 
 #include "phpch.h"
 
@@ -22,6 +22,8 @@ namespace ph {
 
         inline unsigned get_width() { return m_data.width; }
         inline unsigned get_height() { return m_data.height; }
+
+        GLFWwindow& get_native_window() { return *m_window; }
     private:
         GLFWwindow* m_window;
         WindowData m_data;
