@@ -1,3 +1,5 @@
+#include <phpch.h>
+
 #include "application.h"
 
 namespace ph {
