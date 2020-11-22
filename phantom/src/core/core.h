@@ -1,11 +1,17 @@
 #pragma once
 
-#ifdef _WIN32
-    #ifdef _WIN64
-        #define PH_PLATFORM_WINDOWS
-    #else
-        #error windows 32-bits not supported!
-    #endif
-#elif defined(__linux__)
-    #define PH_PLATFORM_LINUX
+#include "platform.h"
+
+#ifdef PH_DEBUG
+	#if defined(PH_PLATFORM_WINDOWS)
+		#define debug_break() __debugbreak()
+	#elif defined(PH_PLATFORM_LINUX)
+		#include <signal.h>
+	#define debug_break() raise(SIGTRAP)
+	#else
+		#error "Platform doesn't support debugbreak yet!"
+	#endif
+	#define PH_ASSERT
+#else
+#define debug_break()
 #endif
