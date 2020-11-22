@@ -1,7 +1,5 @@
 #pragma once
-#include <phpch.h>
 
-#include "core.h"
 #include "log.h"
 #include "application.h"
 

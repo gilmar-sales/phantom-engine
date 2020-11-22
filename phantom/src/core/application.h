@@ -1,5 +1,4 @@
 #pragma once
-#include "phpch.h"
 
 #include "window.h"
 

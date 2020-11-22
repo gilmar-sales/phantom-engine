@@ -1,8 +1,5 @@
 #pragma once
 
-#include "phpch.h"
-#include "core.h"
-
 #include <spdlog/spdlog.h>
 #include <spdlog/fmt/fmt.h>
 

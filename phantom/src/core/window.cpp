@@ -2,9 +2,6 @@
 
 #include "window.h"
 
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
-
 namespace ph {
     Window::Window(const WindowData& data) {
         m_data = data;
