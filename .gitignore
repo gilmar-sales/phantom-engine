@@ -1,11 +1,12 @@
 phantom/libraries/*
 .vscode
+.vs
 
 Makefile
-bin/*
-bin-int/*
+bin/
+bin-int/
 *.make
 
 *.vcxproj
-*.vcxproj.filters
+*.vcxproj.*
 *.sln
