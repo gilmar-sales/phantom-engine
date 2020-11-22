@@ -5,3 +5,7 @@ Makefile
 bin/*
 bin-int/*
 *.make
+
+*.vcxproj
+*.vcxproj.filters
+*.sln
