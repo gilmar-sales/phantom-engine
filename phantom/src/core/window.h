@@ -35,7 +35,7 @@ namespace ph {
         inline unsigned get_width() { return m_data.width; }
         inline unsigned get_height() { return m_data.height; }
 
-        GLFWwindow& get_native_window() { return *m_window; }
+        GLFWwindow* get_native_window() { return m_window; }
     private:
 
         void startup();
