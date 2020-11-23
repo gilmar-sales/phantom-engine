@@ -1,6 +1,6 @@
 workspace "phantom-engine"
     architecture "x86_64"
-	startproject "sandbox"
+	startproject "editor"
     
     configurations {
 		"Debug",
@@ -21,7 +21,7 @@ IncludeDir = {
 }
 
 include "phantom"
-include "sandbox"
+include "editor"
 
 group "Libraries"
     include "phantom/libraries/glfw"
