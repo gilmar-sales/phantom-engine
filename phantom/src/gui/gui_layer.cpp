@@ -20,7 +20,7 @@ namespace ph
 		PH_CORE_INFO("Check imgui version");
 		ImGui::CreateContext();
 		PH_CORE_INFO("ImGui::CreateContext");
-		ImGuiIO& io = ImGui::GetIO(); (void)io;
+		ImGuiIO& io = ImGui::GetIO(); 
 		io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;       // Enable Keyboard Controls
 		//io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
 		io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;           // Enable Docking
@@ -43,8 +43,9 @@ namespace ph
 			style.Colors[ImGuiCol_WindowBg].w = 1.0f;
 		}
 
-		style.WindowRounding = 4.0f;
+		style.WindowRounding = 0.0f;
 		style.WindowBorderSize = 0.0f;
+		style.WindowPadding = {0.0f, 0.0f};
 		style.GrabRounding = 2.0f;
 
 		style.AntiAliasedLines = true;
