@@ -16,7 +16,7 @@ namespace ph {
 
     void Application::run()
     {
-        while(!glfwWindowShouldClose(&m_window->get_native_window())) {
+        while(!glfwWindowShouldClose(m_window->get_native_window())) {
             m_window->on_update();
         }
     }
