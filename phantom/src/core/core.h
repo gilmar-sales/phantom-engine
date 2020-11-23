@@ -15,3 +15,5 @@
 #else
 #define debug_break()
 #endif
+
+#define BIT(x) (1 << x)
