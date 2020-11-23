@@ -7,23 +7,24 @@ workspace "phantom-engine"
 		"Release",
 		"Dist"
     }
-    
-outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+    xcodebuildsettings { ["ALWAYS_SEARCH_USER_PATHS"] = "YES" }
 
--- Include directories relative to root folder (solution directory)
-IncludeDir = {
-    ["glfw"] = "%{wks.location}/phantom/libraries/glfw/include",
-    ["glad"] = "%{wks.location}/phantom/libraries/glad/include",
-    ["spdlog"] = "%{wks.location}/phantom/libraries/spdlog/include",
-    ["imgui"] = "%{wks.location}/phantom/libraries/imgui",
-    ["assimp"] = "%{wks.location}/phantom/libraries/assimp/include",
-    ["ct-ecs"] = "%{wks.location}/phantom/libraries/ct-ecs/include"
-}
+    outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
-include "phantom"
-include "editor"
+    -- Include directories relative to root folder (solution directory)
+    IncludeDir = {
+        ["glfw"] = "%{wks.location}/phantom/libraries/glfw/include",
+        ["glad"] = "%{wks.location}/phantom/libraries/glad/include",
+        ["spdlog"] = "%{wks.location}/phantom/libraries/spdlog/include",
+        ["imgui"] = "%{wks.location}/phantom/libraries/imgui",
+        ["assimp"] = "%{wks.location}/phantom/libraries/assimp/include",
+        ["ct-ecs"] = "%{wks.location}/phantom/libraries/ct-ecs/include"
+    }
 
-group "Libraries"
-    include "phantom/libraries/glfw"
-    include "phantom/libraries/glad"
-    include "phantom/libraries/imgui"
+    include "phantom"
+    include "editor"
+
+    group "Libraries"
+        include "phantom/libraries/glfw"
+        include "phantom/libraries/glad"
+        include "phantom/libraries/imgui"

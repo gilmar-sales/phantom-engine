@@ -45,6 +45,13 @@ project "editor"
             "pthread"
         }
 
+    filter "system:macosx"
+        links {
+            "Cocoa.framework",
+            "IOKit.framework"
+            }
+    
+
     filter "configurations:Debug"
         defines "PH_DEBUG"
         runtime "Debug"

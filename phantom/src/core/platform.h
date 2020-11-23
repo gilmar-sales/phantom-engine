@@ -7,7 +7,7 @@
         #error windows 32-bits not supported!
     #endif
 #elif defined(__APPLE__) || defined(__MACH__)
-    #error mac os not supported!
+    #define PH_PLATFORM_LINUX
 #elif defined(__linux__)
     #define PH_PLATFORM_LINUX
 #endif

@@ -38,6 +38,12 @@ project "phantom"
         links {
             "GL"
         }
+    filter "toolset:clang"
+        pchheader "src/phpch.h"
+        
+        links {
+            "OpenGL.framework"
+        }
 
     filter "configurations:Debug"
         defines "PH_DEBUG"

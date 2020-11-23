@@ -39,6 +39,9 @@ namespace ph {
 
             glfwSetErrorCallback(glfw_error_callback);
         }
+        
+        glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+        glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
 
         s_window_count++;
         glfwWindowHint(GLFW_MAXIMIZED, 1);
