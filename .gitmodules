@@ -7,3 +7,7 @@
 [submodule "phantom/libraries/spdlog"]
 	path = phantom/libraries/spdlog
 	url = https://github.com/gilmarxd/spdlog.git
+[submodule "phantom/libraries/imgui"]
+	path = phantom/libraries/imgui
+	url = https://github.com/gilmarxd/imgui.git
+	branch = docking
