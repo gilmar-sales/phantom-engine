@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <sstream>
+#include <functional>
 
 #include "core/core.h"
 
