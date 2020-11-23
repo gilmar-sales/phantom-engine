@@ -9,6 +9,7 @@ namespace ph
 {
     EditorLayer::EditorLayer() : Layer("EditorLayer")
     {
+        m_hierarchy_panel = new HierarchyPanel();
     }
 
     void EditorLayer::on_gui_render()
@@ -150,6 +151,6 @@ namespace ph
         static ImGuiDockNodeFlags stats_flags = ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize
             | ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoDocking;
 
-
+        m_hierarchy_panel->on_gui_render();
     }
 }

@@ -2,6 +2,7 @@
 
 #include <core/layer.h>
 
+#include "panels/hierarchy_panel.h"
 
 namespace ph
 {
@@ -12,6 +13,8 @@ namespace ph
         ~EditorLayer() = default;
 
         virtual void on_gui_render() override;
+    private:
+        HierarchyPanel* m_hierarchy_panel;
     };
     
 }
