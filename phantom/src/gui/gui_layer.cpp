@@ -62,7 +62,8 @@ namespace ph
 		style.ItemSpacing.x = 10;
 		style.ItemSpacing.y = 4;
 
-		style.TabBorderSize = 0.0f;
+		style.TabBorderSize = 1.0f;
+
 		style.PopupBorderSize = 0.0f;
 
 		style.FramePadding.x = 6;
