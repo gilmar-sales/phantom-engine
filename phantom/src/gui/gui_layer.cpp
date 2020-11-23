@@ -11,7 +11,7 @@
 #include <core/application.h>
 #include <core/log.h>
 
-//#include "styles/styles.h"
+#include "styles/styles.h"
 
 namespace ph
 {
