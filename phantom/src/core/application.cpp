@@ -3,6 +3,8 @@
 #include "application.h"
 
 namespace ph {
+    Application* Application::s_instance = nullptr;
+
     Application::Application(std::string name, unsigned int height, unsigned int width)
         : m_layer_stack()
     {

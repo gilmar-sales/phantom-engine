@@ -4,9 +4,9 @@
 
 #include "window.h"
 #include "layer_stack.h"
-#include "entry_point.h"
 
-namespace ph {
+namespace ph
+{
     #define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
 
     class Application
@@ -28,7 +28,6 @@ namespace ph {
         Window* m_window;
         LayerStack m_layer_stack;
         static Application* s_instance;
-        friend int ::main(int argc, char** argv);
     };
 
     Application* create_application();
