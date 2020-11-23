@@ -57,7 +57,7 @@ namespace ph
 		virtual int get_category_flags() const = 0;
 		virtual std::string to_string() const { return get_name(); }
 
-		inline bool IsInCategory(EventCategory category)
+		inline bool is_in_category(EventCategory category)
 		{
 			return get_category_flags() & (int)category;
 		}
