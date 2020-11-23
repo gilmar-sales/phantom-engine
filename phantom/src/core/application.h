@@ -1,22 +1,34 @@
 #pragma once
 
+#include <functional>
+
 #include "window.h"
+#include "layer_stack.h"
+#include "entry_point.h"
 
 namespace ph {
-    class Application {
+    #define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
+
+    class Application
+    {
     public:
         Application(std::string name, unsigned int height, unsigned int width);
         ~Application() = default;
 
         virtual void on_update() = 0;
-        virtual void on_event() = 0;
 
+        void on_event(Event& e);
         void run();
 
         Window& get_window() { return *m_window; }
 
+        static Application& get() { return *s_instance; }
+
     private:
         Window* m_window;
+        LayerStack m_layer_stack;
+        static Application* s_instance;
+        friend int ::main(int argc, char** argv);
     };
 
     Application* create_application();

@@ -1,30 +1,46 @@
 #pragma once
 
 #include <string>
+#include <string_view>
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
-namespace ph {
+#include <events/application_event.h>
+#include <events/key_event.h>
+#include <events/mouse_event.h>
 
-    struct WindowData {
-        std::string title;
-        unsigned width, height;
-        bool v_sync;
-    };
+namespace ph {
 
     class Window {
     public:
-        Window(const WindowData& data);
+        using EventCallbackFn = std::function<void(Event&)>;
+
+        struct WindowData
+        {
+            std::string title;
+            unsigned width;
+            unsigned height;
+            EventCallbackFn event_callback;
+        };
+
+        Window(std::string title, unsigned width, unsigned height);
         ~Window();
 
         void on_update();
 
+        void set_event_callback(const EventCallbackFn& callback) { m_data.event_callback = callback; }
+
+        inline std::string_view get_title() { return m_data.title; }
         inline unsigned get_width() { return m_data.width; }
         inline unsigned get_height() { return m_data.height; }
 
         GLFWwindow& get_native_window() { return *m_window; }
     private:
+
+        void startup();
+        void shutdown();
+
         GLFWwindow* m_window;
         WindowData m_data;
     };
