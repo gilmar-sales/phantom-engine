@@ -24,7 +24,6 @@ namespace ph {
     }
 
     void Window::on_update() {
-        glClear(GL_COLOR_BUFFER_BIT);
         glfwSwapBuffers(m_window);
         glfwPollEvents();
     }
