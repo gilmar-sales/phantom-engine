@@ -17,13 +17,15 @@ project "sandbox"
         "%{wks.location}/phantom/src",
         "%{IncludeDir.glfw}",
         "%{IncludeDir.glad}",
-        "%{IncludeDir.spdlog}"
+        "%{IncludeDir.spdlog}",
+        "%{IncludeDir.imgui}"
     }
 
     links {
         "phantom",
         "glfw",
         "glad",
+        "imgui"
     }
 
     filter "toolset:msvc"

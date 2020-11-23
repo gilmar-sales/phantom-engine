@@ -25,7 +25,8 @@ project "phantom"
 
     links { 
         "glfw",
-        "glad"
+        "glad",
+        "imgui"
     }
 
     filter "toolset:msvc"
