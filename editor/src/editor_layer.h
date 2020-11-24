@@ -15,6 +15,7 @@ namespace ph
         virtual void on_gui_render() override;
     private:
         HierarchyPanel* m_hierarchy_panel;
+        bool m_enable_dark_theme = true;
     };
     
 }

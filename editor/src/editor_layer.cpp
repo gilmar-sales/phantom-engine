@@ -4,6 +4,7 @@
 #include <core/application.h>
 
 #include <gui/styles/styles.h>
+#include <gui/extensions/extensions.h>
 
 namespace ph
 {
@@ -81,25 +82,12 @@ namespace ph
 
                 ImGui::Begin("Preferences", &preferences_open, ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_AlwaysAutoResize);
 
-                static char* styles[] = { "Light", "Dark" };
-                static char* selected = styles[1];
+                ToggleButton("Toggle dark mode", &m_enable_dark_theme);
 
-                if (ImGui::BeginCombo("Theme", selected))
-                {
-                    for (char* style : styles)
-                    {
-                        if (ImGui::Selectable(style, selected == style))
-                        {
-                            selected = style;
-                            if (selected == "Light")
-                                StylePhantomLight();
-                            else if (selected == "Dark")
-                                StylePhantomDark();
-                        }
-                    }
-
-                    ImGui::EndCombo();
-                }
+                if (m_enable_dark_theme)
+                    StylePhantomDark();
+                else 
+                    StylePhantomLight();
 
                 ImGui::End();
             }
