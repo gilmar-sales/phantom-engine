@@ -3,7 +3,6 @@
 #include <memory>
 
 #include <glm/glm.hpp>
-#include <glm/glm.hpp>
 
 namespace ph
 {
