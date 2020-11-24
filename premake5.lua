@@ -17,6 +17,7 @@ workspace "phantom-engine"
         ["glad"] = "%{wks.location}/phantom/libraries/glad/include",
         ["spdlog"] = "%{wks.location}/phantom/libraries/spdlog/include",
         ["imgui"] = "%{wks.location}/phantom/libraries/imgui",
+        ["glm"] = "%{wks.location}/phantom/libraries/glm",
         ["assimp"] = "%{wks.location}/phantom/libraries/assimp/include",
         ["ct-ecs"] = "%{wks.location}/phantom/libraries/ct-ecs/include"
     }

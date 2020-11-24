@@ -21,6 +21,7 @@ project "phantom"
         "%{IncludeDir.glad}",
         "%{IncludeDir.spdlog}",
         "%{IncludeDir.imgui}",
+        "%{IncludeDir.glm}",
     }
 
     links { 

@@ -24,7 +24,7 @@ namespace ph {
     }
 
     void Window::on_update() {
-        glfwSwapBuffers(m_window);
+        m_context->swap_buffers();
         glfwPollEvents();
     }
 
@@ -47,18 +47,8 @@ namespace ph {
         glfwWindowHint(GLFW_MAXIMIZED, 1);
         m_window = glfwCreateWindow(m_data.width, m_data.height, m_data.title.c_str(), nullptr, nullptr);
 
-        glfwMakeContextCurrent(m_window);
-
-        if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
-            PH_CORE_ERROR("Couldn't initialize GLAD!");
-        }
-        else
-            PH_CORE_INFO("GLAD initialized!");
-
-        PH_CORE_INFO("OpenGL {1}", glGetString(GL_VENDOR), glGetString(GL_VERSION));
-        PH_CORE_INFO("{0} ", glGetString(GL_RENDERER));
-
-        glClearColor(0.2f, 0.4f, 0.6f, 1.0f);
+        m_context = RenderContext::create(m_window);
+        m_context->init();
 
         glfwSetWindowUserPointer(m_window, &m_data);
         glfwSwapInterval(1);

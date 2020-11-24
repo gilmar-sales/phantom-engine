@@ -10,6 +10,8 @@
 #include <events/key_event.h>
 #include <events/mouse_event.h>
 
+#include <renderer/render_context.h>
+
 namespace ph {
 
     class Window {
@@ -42,6 +44,7 @@ namespace ph {
         void shutdown();
 
         GLFWwindow* m_window;
+        std::unique_ptr<RenderContext> m_context;
         WindowData m_data;
     };
 }
