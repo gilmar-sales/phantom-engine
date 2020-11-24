@@ -36,7 +36,7 @@ namespace ph {
 
     void Application::on_event(Event& event)
     {
-       PH_CORE_INFO(event.to_string());
+       //PH_CORE_INFO(event.to_string());
 
        for (auto it = m_layer_stack.rbegin(); it != m_layer_stack.rend(); ++it)
        {
