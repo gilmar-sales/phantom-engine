@@ -15,7 +15,7 @@ namespace ph
         colors[ImGuiCol_TitleBgActive] = ImVec4(0.92f, 0.92f, 0.92f, 0.95f);
         colors[ImGuiCol_TitleBgCollapsed] = ImVec4(0.92f, 0.92f, 0.92f, 0.75f);
 
-        colors[ImGuiCol_WindowBg] = ImVec4(0.90f, 0.90f, 0.90f, 0.80f);
+        colors[ImGuiCol_WindowBg] = ImVec4(0.90f, 0.90f, 0.90f, 1.00f);
         colors[ImGuiCol_ChildBg] = ImVec4(0.92f, 0.92f, 0.92f, 0.75f);
         colors[ImGuiCol_PopupBg] = ImVec4(0.92f, 0.92f, 0.92f, 0.94f);
 

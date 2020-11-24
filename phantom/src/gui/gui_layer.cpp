@@ -17,9 +17,7 @@ namespace ph
 	{
 		// Setup Dear ImGui context
 		IMGUI_CHECKVERSION();
-		PH_CORE_INFO("Check imgui version");
 		ImGui::CreateContext();
-		PH_CORE_INFO("ImGui::CreateContext");
 		ImGuiIO& io = ImGui::GetIO(); 
 		io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;       // Enable Keyboard Controls
 		//io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
@@ -32,20 +30,14 @@ namespace ph
 
 		// Setup Dear ImGui style
 
-		//ImGui::StyleColorsDark();
-		//ImGui::StyleColorsClassic();
-		StylePhantomDark();
-
-		// When viewports are enabled we tweak WindowRounding/WindowBg so platform windows can look identical to regular ones.
 		ImGuiStyle& style = ImGui::GetStyle();
-		if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
-		{
-			style.Colors[ImGuiCol_WindowBg].w = 1.0f;
-		}
+
+		style.Colors[ImGuiCol_WindowBg].w = 1.0f;
 
 		style.WindowRounding = 0.0f;
 		style.WindowBorderSize = 0.0f;
 		style.WindowPadding = {0.0f, 0.0f};
+
 		style.GrabRounding = 2.0f;
 
 		style.AntiAliasedLines = true;
@@ -64,14 +56,16 @@ namespace ph
 
 		style.TabBorderSize = 1.0f;
 
-		style.PopupBorderSize = 0.0f;
-
-		style.FramePadding.x = 6;
-		style.FramePadding.y = 4;
 		style.FrameRounding = 3.0f;
-		style.FrameBorderSize = 0.0f;
+		style.FrameBorderSize = 1.0f;
+		style.FramePadding = { 6.0f, 4.0f };
+
+		style.PopupBorderSize = 0.0f;
+		style.PopupRounding = 0.0f;
 
 		style.Alpha = 1.0f;
+
+		StylePhantomDark();
 
 		Application& app = Application::get();
 		GLFWwindow* window = static_cast<GLFWwindow*>(app.get_window().get_native_window());
