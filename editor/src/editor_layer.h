@@ -3,6 +3,7 @@
 #include <core/layer.h>
 
 #include "panels/hierarchy_panel.h"
+#include <platform/opengl/opengl_frame_buffer.h>
 
 namespace ph
 {
@@ -15,6 +16,7 @@ namespace ph
         virtual void on_gui_render() override;
     private:
         HierarchyPanel* m_hierarchy_panel;
+        std::shared_ptr<Framebuffer> m_scene_frame;
         bool m_enable_dark_theme = true;
     };
     
