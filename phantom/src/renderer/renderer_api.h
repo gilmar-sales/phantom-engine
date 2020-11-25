@@ -6,8 +6,11 @@
 
 namespace ph
 {
+	class Renderer;
+
 	class RendererAPI
 	{
+		friend class Renderer;
 	public:
 		enum class API
 		{
@@ -21,9 +24,11 @@ namespace ph
 
 		virtual void draw_indexed(const std::shared_ptr<std::vector<glm::vec3>>& vertexArray, uint32_t indexCount = 0) = 0;
 
+		static std::shared_ptr<RendererAPI> get() { return s_instance; };
+		static std::shared_ptr<RendererAPI> create();
 		static API get_api() { return s_api; }
-		static std::unique_ptr<RendererAPI> create();
 	private:
 		static API s_api;
+		static std::shared_ptr<RendererAPI> s_instance;
 	};
 }

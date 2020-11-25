@@ -8,16 +8,17 @@ namespace ph
 {
 	RendererAPI::API RendererAPI::s_api = RendererAPI::API::OpenGL;
 
-	std::unique_ptr<RendererAPI> RendererAPI::create()
+	std::shared_ptr<RendererAPI> RendererAPI::create()
 	{
 		switch (s_api)
 		{
 		case RendererAPI::API::None:    PH_CORE_ERROR("RendererAPI::None is currently not supported!"); return nullptr;
-		case RendererAPI::API::OpenGL:  return std::make_unique<OpenGLRendererAPI>();
+		case RendererAPI::API::OpenGL:  return std::make_shared<OpenGLRendererAPI>();
 		}
 
 		PH_CORE_ERROR("Unknown RendererAPI!");
 		return nullptr;
 	}
 
+	std::shared_ptr<RendererAPI> RendererAPI::s_instance = create();
 }
