@@ -2,6 +2,7 @@
 
 #include <string>
 #include <string_view>
+#include <memory>
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
