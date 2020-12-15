@@ -2,7 +2,7 @@
 
 #include "renderer_api.h"
 
-#include <platform/OpenGL/opengl_renderer_api.h>
+#include <platform/opengl/opengl_renderer_api.h>
 
 namespace ph
 {
