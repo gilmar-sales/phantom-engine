@@ -11,6 +11,6 @@
 	path = phantom/libraries/imgui
 	url = https://github.com/gilmarxd/imgui.git
 	branch = docking
-[submodule ".\\phantom\\libraries\\glm"]
-	path = .\\phantom\\libraries\\glm
+[submodule "phantom/libraries/glm"]
+	path = phantom/libraries/glm
 	url = https://github.com/g-truc/glm.git
