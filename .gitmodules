@@ -1,12 +1,15 @@
 [submodule "phantom/libraries/glfw"]
 	path = phantom/libraries/glfw
 	url = https://github.com/gilmarxd/glfw.git
+	branch = master
 [submodule "phantom/libraries/glad"]
 	path = phantom/libraries/glad
 	url = https://github.com/gilmarxd/glad.git
+	branch = master
 [submodule "phantom/libraries/spdlog"]
 	path = phantom/libraries/spdlog
 	url = https://github.com/gilmarxd/spdlog.git
+	branch = master
 [submodule "phantom/libraries/imgui"]
 	path = phantom/libraries/imgui
 	url = https://github.com/gilmarxd/imgui.git
@@ -17,6 +20,8 @@
 [submodule "phantom/libraries/ct-ecs"]
 	path = phantom/libraries/ct-ecs
 	url = https://github.com/gilmarxd/ct-ecs.git
+	branch = master
 [submodule "phantom/libraries/assimp"]
 	path = phantom/libraries/assimp
 	url = https://github.com/gilmarxd/assimp
+	branch = master
