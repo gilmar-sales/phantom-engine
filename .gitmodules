@@ -17,3 +17,6 @@
 [submodule "phantom/libraries/ct-ecs"]
 	path = phantom/libraries/ct-ecs
 	url = https://github.com/gilmarxd/ct-ecs.git
+[submodule "phantom/libraries/assimp"]
+	path = phantom/libraries/assimp
+	url = https://github.com/gilmarxd/assimp
