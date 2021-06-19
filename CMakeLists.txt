@@ -11,6 +11,7 @@ include_directories(
     "phantom/libraries/glfw/include"
     "phantom/libraries/imgui"
     "phantom/libraries/glm"
+    "phantom/libraries/ct-ecs/include"
 )
 
 add_subdirectory("phantom")
