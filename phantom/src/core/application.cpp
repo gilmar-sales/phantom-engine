@@ -15,6 +15,8 @@ namespace ph {
 
         m_gui_layer = new GUILayer();
         push_overlay(m_gui_layer);
+
+        m_scene = std::make_shared<Scene>();
     }
 
     void Application::run()
@@ -24,6 +26,7 @@ namespace ph {
             
             m_gui_layer->begin();
             {
+                m_scene->update();
 
                 for (Layer* layer : m_layer_stack)
                     layer->on_gui_render();

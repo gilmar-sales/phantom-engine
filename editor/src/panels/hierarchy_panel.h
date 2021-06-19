@@ -1,21 +1,26 @@
 #pragma once
 
+#include <memory>
+
+#include <core/scene.h>
+#include <ecs/ecs.hpp>
+
 namespace ph
 {
     class HierarchyPanel
 	{
 	public:
-		HierarchyPanel() = default;
+		HierarchyPanel(std::shared_ptr<Scene> scene);
 		//HierarchyPanel(const Ref<Scene>& scene);
 
 		//void SetContext(const Ref<Scene>& scene);
 
 		void on_gui_render();
 	private:
-		//void DrawEntityNode(Entity entity);
+		void draw_entity_node(unsigned entity);
 		//void DrawComponents(Entity entity);
 
-		//Ref<Scene> m_Context;
-		//Entity m_SelectionContext;
+		std::shared_ptr<Scene> m_scene;
+		unsigned m_SelectionContext;
 	};
 } // namespace ph

@@ -66,7 +66,7 @@ namespace ph {
 	{
 		if (width == m_specification.width && height == m_specification.height)
 		{
-			PH_CORE_WARN("Attempted to rezize framebuffer with same dimensions");
+			// PH_CORE_WARN("Attempted to rezize framebuffer with same dimensions");
 			return;
 		}
 

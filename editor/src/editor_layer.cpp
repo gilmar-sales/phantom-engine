@@ -8,9 +8,9 @@
 
 namespace ph
 {
-    EditorLayer::EditorLayer() : Layer("EditorLayer")
+    EditorLayer::EditorLayer(std::shared_ptr<ph::Scene> scene) : Layer("EditorLayer")
     {
-        m_hierarchy_panel = new HierarchyPanel();
+        m_hierarchy_panel = std::make_shared<ph::HierarchyPanel>(scene);
 
         FramebufferSpecification spec 
         {

@@ -10,12 +10,12 @@ namespace ph
     class EditorLayer : public Layer
     {
     public:
-        EditorLayer();
+        EditorLayer(std::shared_ptr<ph::Scene> hierarchy_panel);
         ~EditorLayer() = default;
 
         virtual void on_gui_render() override;
     private:
-        HierarchyPanel* m_hierarchy_panel;
+        std::shared_ptr<ph::HierarchyPanel> m_hierarchy_panel;
         std::shared_ptr<Framebuffer> m_scene_frame;
         bool m_enable_dark_theme = true;
     };

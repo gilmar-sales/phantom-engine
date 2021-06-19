@@ -3,6 +3,7 @@
 #include <functional>
 
 #include "window.h"
+#include "scene.h"
 #include "layer_stack.h"
 
 #include <gui/gui_layer.h>
@@ -31,10 +32,11 @@ namespace ph
 
         static Application& get() { return *s_instance; }
 
-    private:
+    protected:
         Window* m_window;
         GUILayer* m_gui_layer;
         LayerStack m_layer_stack;
+        std::shared_ptr<Scene> m_scene;
 
         static Application* s_instance;
         friend int ::main(int argc, char** argv);

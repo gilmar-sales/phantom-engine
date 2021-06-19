@@ -3,7 +3,6 @@
 #include "log.h"
 #include "application.h"
 
-
 extern ph::Application* ph::create_application();
 
 int main(int argc, char** argv) {
