@@ -1,8 +1,8 @@
 #pragma once
 
-namespace ecs
+namespace ph
 {
     struct MainCameraTag { };
     struct PlayerTag { };
     struct EnemyTag { };
-} // namespace ecs
+} // namespace ph

@@ -7,6 +7,7 @@ Makefile
 bin/
 bin-int/
 *.make
+CMakeSettings.json
 
 *.vcxproj
 *.vcxproj.*

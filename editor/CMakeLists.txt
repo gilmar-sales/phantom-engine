@@ -1,5 +1,6 @@
 file(GLOB_RECURSE EDITOR_SRC
     "src/*.cpp"
+    "src/*.h"
 )
 
 add_executable(editor

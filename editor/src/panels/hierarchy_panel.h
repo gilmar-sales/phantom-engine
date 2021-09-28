@@ -3,6 +3,7 @@
 #include <memory>
 
 #include <core/scene.h>
+#include <glad/glad.h>
 #include <ecs/ecs.hpp>
 
 namespace ph
@@ -18,6 +19,7 @@ namespace ph
 		void on_gui_render();
 	private:
 		void draw_entity_node(unsigned entity);
+		void add_cube_mesh(uint32_t entity);
 		//void DrawComponents(Entity entity);
 
 		std::shared_ptr<Scene> m_scene;

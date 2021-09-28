@@ -51,7 +51,7 @@ namespace ph {
         m_context->init();
 
         glfwSetWindowUserPointer(m_window, &m_data);
-        glfwSwapInterval(1);
+        //glfwSwapInterval(1);
 
         glClearColor(0.2f, 0.4f, 0.6f, 1.0f);
 

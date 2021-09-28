@@ -2,7 +2,7 @@
 
 #include <glm/glm.hpp>
 
-namespace ecs
+namespace ph
 {
     struct NameComponent
     {

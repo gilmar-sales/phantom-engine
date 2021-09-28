@@ -2,6 +2,7 @@
 
 file(GLOB_RECURSE PHANTOM_SRC
     "src/*.cpp"
+    "src/*.h"
 )
 
 add_library(phantom

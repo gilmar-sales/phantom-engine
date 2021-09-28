@@ -5,19 +5,19 @@
 
 class EditorApp : public ph::Application
 {
-public:
+  public:
     EditorApp() : ph::Application("Phantom Editor", 1280, 720)
     {
         push_layer(new ph::EditorLayer(m_scene));
     };
     ~EditorApp() = default;
 
-    void on_event(ph::Event &e) {};
+    void on_event(ph::Event &e){};
     void on_update()
     {
-
     }
-private:
+
+  private:
 };
 
 ph::Application *ph::create_application()
